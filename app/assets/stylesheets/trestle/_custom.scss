@@ -29,6 +29,16 @@
   height: 70px;
 }
 
+.poster-actor {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
 .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
   background-color: #E50914;
+}
+
+.trestle-table tbody a {
+  color: #E50914;
 }

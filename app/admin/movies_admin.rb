@@ -1,6 +1,6 @@
 Trestle.resource(:movies) do
   menu do
-    item :movies, icon: "fa fa-star"
+    item :movies, icon: "fa fa-video"
   end
 
   scopes do
@@ -34,10 +34,19 @@ Trestle.resource(:movies) do
       text_field :director
 
       select :genre_ids, Genre.all, { label: "Genre" }, multiple: true
+      select :actor_ids, Actor.all, { label: "Actor" }, multiple: true
+      select :track_ids, Track.all, { label: "Track" }, multiple: true
     end
 
     tab :image do
       text_field :image
+    end
+
+    tab :actors, badge: movie.actors.count do
+      table ActorsAdmin.table, collection: movie.actors
+    end
+    tab :track, badge: movie.tracks.count do
+      table TracksAdmin.table, collection: movie.tracks
     end
   end
 
