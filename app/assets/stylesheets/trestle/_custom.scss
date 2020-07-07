@@ -1,0 +1,34 @@
+// This file may be used for providing additional customizations to the Trestle
+// admin. It will be automatically included within all admin pages.
+//
+// For organizational purposes, you may wish to define your customizations
+// within individual partials and `import` them here, e.g.
+//
+//    @import "trestle/custom/my_custom_css";
+//
+
+.app-sidebar-title {
+  background-color: #98161D;
+}
+
+.app-nav .active a {
+  border-color: #98161d;
+}
+
+.breadcrumb-item a {
+  color: #E50914;
+}
+
+.tag {
+  background-color: #E50914;
+  border: none;
+}
+
+.poster {
+  width: 70px;
+  height: 70px;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+  background-color: #E50914;
+}

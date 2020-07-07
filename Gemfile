@@ -29,6 +29,11 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'trestle'
+gem 'trestle-search'
+gem 'faker'
+gem 'pg_search'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
