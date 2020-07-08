@@ -28,6 +28,7 @@ Trestle.resource(:movies) do
   end
 
   form do |movie|
+
     tab :info do
       text_field :title
       text_field :year
@@ -45,8 +46,12 @@ Trestle.resource(:movies) do
     tab :actors, badge: movie.actors.count do
       table ActorsAdmin.table, collection: movie.actors
     end
+
     tab :track, badge: movie.tracks.count do
       table TracksAdmin.table, collection: movie.tracks
+      toolbar(:secondary, clear: true) do |t|
+        t.link "Add Tracks", new_tracks_admin_path(movie_id: movie.id)
+      end
     end
   end
 

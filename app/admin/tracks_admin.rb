@@ -1,23 +1,26 @@
 Trestle.resource(:tracks) do
-  # Customize the table columns shown on the index view.
-  #
-
-  menu do
-    item :tracks, icon: "fa fa-music"
-  end
 
   table do
     column :title
     actions
   end
 
-  # Customize the form fields shown on the new/edit views.
-  #
-  form do |track|
-    text_field :title
 
-    select :movie_id, Movie.all, { label: "Movie" }
+  form dialog: true do |track|
+    row do
+      col(sm: 12) { text_field :title }
+      col(sm: 6) {
+        hidden_field :movie_id, value: params[:movie_id]
+      }
+    end
   end
+
+  # controller do
+  #   def create
+  #     movie = Movie.find(params[:movie_id])
+  #     track.movie = movie
+  #   end
+  # end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly

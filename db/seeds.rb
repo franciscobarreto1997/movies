@@ -56,8 +56,8 @@ Movie.all.map { |movie| movies << movie }
   Actor.create(name: Faker::Name.unique.name,
                age: (10..100).to_a.sample,
                image: actor_images.sample)
-    Track.create(title: Faker::Music.album,
-                 movie_id: movies.sample.id)
+  Track.create(title: Faker::Music.album,
+               movie_id: movies.sample.id)
 end
 
 
